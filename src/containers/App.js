@@ -10,15 +10,15 @@ class App extends Component {
     constructor() {
         super()
         this.state = {
-            robots: [],
+            pokemons: [],
             searchfield: ''
         }
     }
 
     componentDidMount() {
-        fetch('https://jsonplaceholder.typicode.com/users')
+        fetch(' https://pokeapi.co/api/v2/{endpoint}/')
             .then(response => response.json())
-            .then(users => {this.setState({ robots: users})});
+            .then(users => {this.setState({ pokemons: users})});
 
     }
 
@@ -28,19 +28,19 @@ class App extends Component {
     }
 
     render() {
-        const { robots, searchfield } = this.state;
-        const filteredRobots = robots.filter(robot => {
-            return robot.name.toLowerCase()
+        const { pokemons, searchfield } = this.state;
+        const filteredPokemons = pokemons.filter(pokemon => {
+            return pokemon.name.toLowerCase()
                 .includes(searchfield.toLowerCase());
         })
-            return !robots.length ?
+            return !pokemons.length ?
             <h1>Loading</h1> :
             (
                 <div className='tc'>
-                    <h1 className='f1'>RoboFriends</h1>    
+                    <h1 className='f1'>Your favotire Pokedex</h1>    
                     <Searchbox searchChange={this.onSearchChange}/>
                     <Scroll>
-                        <Cardlist robots={filteredRobots}/>
+                        <Cardlist pokemons={filteredPokemons}/>
                     </Scroll>
                 </div>
             );
