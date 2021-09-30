@@ -2,20 +2,12 @@
   "name": "pokedex",
   "version": "0.1.0",
   "private": true,
-<<<<<<< HEAD
   "homepage": "https://paulotasso7.github.io/robofriends",
   "dependencies": {
-=======
-   "dependencies": {
->>>>>>> 509db6a141067cf87fa2f2e882df15844f0dec04
     "@testing-library/jest-dom": "^5.14.1",
     "@testing-library/react": "^11.2.7",
     "@testing-library/user-event": "^12.8.3",
     "gh-pages": "^3.2.3",
-<<<<<<< HEAD
-=======
-    "pokedex-promise-v2": "^3.3.2",
->>>>>>> 509db6a141067cf87fa2f2e882df15844f0dec04
     "react": "^17.0.2",
     "react-dom": "^17.0.2",
     "react-scripts": "^4.0.3",
