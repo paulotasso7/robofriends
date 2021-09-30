@@ -1,17 +1,17 @@
 import React from "react";  
 import Card from './Card';
 
-const Cardlist = ({ robots }) => {
+const Cardlist = ({ pokemons }) => {
     return (
         <div>
             {
                 robots.map((user, i) => {
                     return (
-                        <Card 
+                        <Poke 
                             key={i} 
-                            id={robots[i].id} 
-                            name={robots[i].name} 
-                            email={robots[i].email}
+                            id={pokemons[i].id} 
+                            name={pokemons[i].name} 
+                            abilities={pokemons[i].abilities}
                             />
                     );
                 })
