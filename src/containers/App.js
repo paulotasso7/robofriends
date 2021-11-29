@@ -37,7 +37,7 @@ class App extends Component {
             <h1>Loading</h1> :
             (
                 <div className='tc'>
-                    <h1 className='f1'>Your favotire Pokedex</h1>    
+                    <h1 className='f1'>RoboAmigos</h1>    
                     <Searchbox searchChange={this.onSearchChange}/>
                     <Scroll>
                         <Cardlist robots={filteredRobots}/>
@@ -45,8 +45,9 @@ class App extends Component {
                 </div>
             );
        
-        } 
-    }
+    } 
+    
+}
 
 
 
