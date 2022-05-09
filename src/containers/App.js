@@ -6,24 +6,24 @@ import './App.css'
 
 
 
-const App = () => {
+function App() {
 
     const [ robots, setRobots ] = useState([]);
-    const [ searchfield, setSearchField ] = useState('');
+    const [ searchfield, setSearchfield ] = useState('');
 
     useEffect(() => {
         fetch('https://jsonplaceholder.typicode.com/users')
         .then(response => response.json())
-        .then(users => setRobots(users));
+        .then(users => setRobots(users),[]);
 
     }) 
 
-    let onSearchChange = (event) => {
-        setSearchField(event.target.value)
+    const onSearchChange = (event) => {
+        setSearchfield(event.target.value)
             
     }
 
-    let filteredRobots = () => robots.filter(robot => {
+    const filteredRobots = () => robots.filter(robot => {
         return robot.name.toLowerCase()
             .includes(searchfield.toLowerCase());
     })
