@@ -7,17 +7,21 @@ import {
   applyMiddleware,
 } from "@reduxjs/toolkit";
 import thunkMiddleware from "redux-thunk";
+import { createLogger } from "redux-logger";
+import reportWebVitals from "./reportWebVitals";
+import "tachyons";
+
 import { searchRobots, requestRobots } from "./redux/reducers";
 import "./index.css";
 import App from "./containers/App";
-import reportWebVitals from "./reportWebVitals";
-import "tachyons";
+
+const logger = createLogger();
 
 const rootReducers = combineReducers({ searchRobots, requestRobots });
 
 const store = configureStore(
   { reducer: rootReducers },
-  applyMiddleware(thunkMiddleware)
+  applyMiddleware(thunkMiddleware, logger)
 );
 
 ReactDOM.render(
